@@ -13,6 +13,12 @@ img {
   height: auto;
 }
 
+.poster-img>img {
+  border: white 0.5em solid;
+  transform: translateX(-0.5em) scale(90%);
+  margin: 0;
+}
+
 a {
   color:inherit;
 }
@@ -20,8 +26,6 @@ a {
 main {
   position: static;
 }
-
-
 
 nav {
   left:0px;
@@ -31,6 +35,7 @@ nav {
   height: 100vh;
   top:0;
   display:none;
+  z-index: 1;
 }
 
 .show {
@@ -107,6 +112,7 @@ nav {
       padding-left: 30px;
       display: block;
       top: 5em;
+      z-index: 0;
   }
 
   #site-title {
@@ -163,7 +169,7 @@ nav {
     .column {
       flex: 25%;
       max-width: 25%;
-      padding: 0 4px;
+      padding: 0 6px;
     }
     
     .column img {
