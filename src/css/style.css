@@ -9,6 +9,10 @@ p, img, h2 {
   margin: 1em auto;
 }
 
+img {
+  height: auto;
+}
+
 a {
   color:inherit;
 }
@@ -92,7 +96,6 @@ nav {
 
   p, img {
     max-width: 25em;
-    height: auto;
   }
 
   img {
