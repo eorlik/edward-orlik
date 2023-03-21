@@ -11,7 +11,6 @@ $(document).ready(function(){
   $(".nav-link").click(function(){
     $(".nav-link").removeClass('active-nav-item');
     $(this).toggleClass('active-nav-item');
-    console.log(this.id);
     if (this.id === "") {
         $("main").load("/about/index.html");
     } else {
