@@ -92,6 +92,7 @@ nav {
 
   p, img {
     max-width: 25em;
+    height: auto;
   }
 
   img {
