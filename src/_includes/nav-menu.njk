@@ -1,0 +1,11 @@
+<span onclick="toggleMenu()" id="menu-btn">+</span>
+    <h2 id="site-title">Edward Orlik</h2>
+<nav id="nav">
+    <div class="nav-links">
+        {% for i in collections.nav %}
+        <span class="nav-link {{ 'active-nav-item' if i.url == page.url }}" id="{{ i.fileSlug }}">{{ i.data.title }}</span>
+        {% endfor %}
+    </div>
+</nav>
+
+

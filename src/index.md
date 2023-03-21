@@ -1,9 +1,10 @@
 ---
-template: base.liquid
-title: About page
+title: About
+layout: base.njk
+tags: nav
 ---
 
-Content
+{% include "about.md" %}
 
 <style>
     .dog-pic, .dog-pic>img {
