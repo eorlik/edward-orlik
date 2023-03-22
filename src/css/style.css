@@ -1,7 +1,33 @@
-body {
+/*body {
   font-family: avenir, helvetica, arial, sans-serif;
   color: white;
   background-color: #3E3DCB;
+}
+*/
+
+body[data-theme='light_theme'] {
+  --white: #fff;
+  --bg-color: #F8F8F8;
+  --color: #151977;
+  --secondary-color: #ff7f57;
+  --icon-bg-color: #333;   
+  --icon-color: #333;
+}
+
+body {
+  font-family: avenir, helvetica, arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--color);
+  text-align: center;
+}
+
+body[data-theme='dark_theme'] {
+  --white: #fff;
+  --bg-color: #3E3DCB;
+  --color: #fff;
+  --secondary-color: #ff7f57;
+  --icon-bg-color: #333;   
+  --icon-color: #fff;
 }
 
 p, img, h2 {
@@ -29,7 +55,7 @@ main {
 
 nav {
   left:0px;
-  background-color: #3E3DCB;
+  background: var(--bg-color);
   position:fixed;
   width: 100vw;
   height: 100vh;
@@ -87,6 +113,7 @@ nav {
   display: block;
   animation: ease-in-out;
   transition-duration: 0.2s;
+  cursor: pointer;
 }
 
 .active-nav-item, .active-nav-item:hover {
@@ -113,6 +140,7 @@ nav {
       display: block;
       top: 5em;
       z-index: 0;
+      background:transparent;
   }
 
   #site-title {
@@ -150,47 +178,12 @@ nav {
       left: 250px;
   }
 
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap:20px;
-    flex-direction:row;
-  }
-
-
-  /* FLEXBOX GALLERY*/
-  .row {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 0 4px;
-    }
-    
-    /* Create four equal columns that sits next to each other */
-    .column {
-      flex: 25%;
-      max-width: 25%;
-      padding: 0 6px;
-    }
-    
-    .column img {
-      margin-top: 8px;
-      vertical-align: middle;
-      width: 100%;
-    }
-    
-    /* Responsive layout - makes a two column-layout instead of four columns */
-    @media screen and (max-width: 800px) {
-      .column {
-        flex: 50%;
-        max-width: 50%;
-      }
-    }
-    
-    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
-      .column {
-        flex: 100%;
-        max-width: 100%;
-      }
-    }
-  }
+  
+  
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap:20px;
+  flex-direction:row;
+}
