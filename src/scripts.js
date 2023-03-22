@@ -38,7 +38,7 @@ $(document).ready(function(){
     * The light theme load morning and evening
     */
   
-    if(currentHour >= 19 || currentHour <= 6) {
+    if( h >= 19 || h <= 6) {
       document.body.setAttribute("data-theme", "dark_theme") 
     }else {
       document.body.setAttribute("data-theme", "light_theme") 
