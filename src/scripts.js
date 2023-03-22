@@ -27,3 +27,22 @@ $(document).ready(function(){
 
   });
 
+
+
+  function setThemePreference() {
+    // Get hour of the day
+    var h = new Date().getHours();
+
+    /*
+    * The dark theme load early morning and night
+    * The light theme load morning and evening
+    */
+  
+    if(currentHour >= 19 || currentHour <= 6) {
+      document.body.setAttribute("data-theme", "dark_theme") 
+    }else {
+      document.body.setAttribute("data-theme", "light_theme") 
+    }
+  }
+  
+  window.onload = setThemePreference;
