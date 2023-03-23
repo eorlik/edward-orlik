@@ -30,19 +30,45 @@ $(document).ready(function(){
 
 
   function setThemePreference() {
+
+    function getLatLong(callback) {
+      var ip = '';
+      var XMLHttp = new XMLHttpRequest();
+      XMLHttp.onreadystatechange = function(resp) {
+        if(this.readyState == 4 && this.status == 200) {
+          var ipwhois = JSON.parse(this.responseText);
+          callback(ipwhois.latitude, ipwhois.longitude);
+        }
+      };
+      XMLHttp.open('GET', 'https://ipwho.is/' + ip, true);
+      XMLHttp.send();
+    }
+    
+
+
+
+    
+function setTheme (latitude, longitude) {
+
+    var times = SunCalc.getTimes(new Date(), latitude, longitude);
+    sunrise = times.sunrise.getTime();
+    sunset = times.sunset.getTime();
     // Get hour of the day
-    var h = new Date().getHours();
+    var currentTime = new Date().getTime();
 
     /*
     * The dark theme load early morning and night
     * The light theme load morning and evening
     */
-  
-    if( h >= 19 || h <= 6) {
+
+    if( currentTime >= sunset || currentTime <= sunrise) {
       document.body.setAttribute("data-theme", "dark_theme") 
     }else {
       document.body.setAttribute("data-theme", "light_theme") 
     }
+  }
+
+  getLatLong(setTheme);
   }
   
   window.onload = setThemePreference;
