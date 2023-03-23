@@ -32,11 +32,14 @@ $(document).ready(function(){
   function setThemePreference() {
 
     function getLatLong(callback) {
+      // Get user's Latitude and Longitude through an API call. 
+      // getLatLong then calls a callback function, and feeds it the lat and long as arguments.
       var ip = '';
       var XMLHttp = new XMLHttpRequest();
       XMLHttp.onreadystatechange = function(resp) {
         if(this.readyState == 4 && this.status == 200) {
           var ipwhois = JSON.parse(this.responseText);
+          // Assign variables to be fed into the callback argument (which will be setTheme)
           callback(ipwhois.latitude, ipwhois.longitude);
         }
       };
@@ -44,30 +47,31 @@ $(document).ready(function(){
       XMLHttp.send();
     }
     
-
-
-
-    
-function setTheme (latitude, longitude) {
-
-    var times = SunCalc.getTimes(new Date(), latitude, longitude);
-    sunrise = times.sunrise.getTime();
-    sunset = times.sunset.getTime();
-    // Get hour of the day
-    var currentTime = new Date().getTime();
-
-    /*
-    * The dark theme load early morning and night
-    * The light theme load morning and evening
+    /* 
+      Set theme based on current time and sunrise/sunset. This function will be called once 
+      getLatLong has ascertained the user's location
     */
+    
+    function setTheme (latitude, longitude) {
+      //get sunset/sunrise times based on latitude and longitude
+      var times = SunCalc.getTimes(new Date(), latitude, longitude);
+      sunrise = times.sunrise.getTime();
+      sunset = times.sunset.getTime();
+      //get the time now
+      var currentTime = new Date().getTime();
 
-    if( currentTime >= sunset || currentTime <= sunrise) {
-      document.body.setAttribute("data-theme", "dark_theme") 
-    }else {
-      document.body.setAttribute("data-theme", "light_theme") 
-    }
+      /*
+      * The dark theme load early morning and night
+      * The light theme load morning and evening
+      */
+
+      if( currentTime >= sunset || currentTime <= sunrise) {
+        document.body.setAttribute("data-theme", "dark_theme") 
+      }else {
+        document.body.setAttribute("data-theme", "light_theme") 
+      }
   }
-
+  // call getLatLong, which ascertains the user's lat/long, and feed them as arguments into setTheme().
   getLatLong(setTheme);
   }
   
