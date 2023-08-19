@@ -8,7 +8,7 @@ At the moment, I am studying for a MSc in Political Sociology at the London Scho
 
 I'm open to all sorts of new projects and enquiries. If you like to talk about commissions and collaborations, you can email me here: eorlik@gmail.com.
 
-You can download my CV <a href="/assets/edward-orlik-cv-2022.pdf">here</a>.
+You can download my CV <a href="/assets/edward-orlik-cv-2023.pdf">here</a>.
 
 <style>
     .map-image>img {
