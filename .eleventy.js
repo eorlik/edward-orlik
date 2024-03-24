@@ -78,7 +78,7 @@ const imageShortcode = async (
 
 
 module.exports = function (eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("./flodden.pdf");
+    eleventyConfig.addPassthroughCopy("./src/flodden.pdf");
     eleventyConfig.addWatchTarget("./src/flodden.pdf");
     eleventyConfig.addPassthroughCopy("./src/css");
     eleventyConfig.addWatchTarget("./src/css/");
