@@ -40,6 +40,7 @@ p {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: normal;
+  line-height: 150%;
 }
 
 img {
@@ -148,7 +149,6 @@ nav {
   
   p {
     max-width: 45em;
-    line-height: 150%;
   }
 
   img {
@@ -159,7 +159,7 @@ nav {
       position:fixed;
       padding-left: 30px;
       display: block;
-      top: 5em;
+      top: 120px;
       z-index: 0;
       background:transparent;
   }
@@ -167,6 +167,7 @@ nav {
   #site-title {
     position: fixed;
     left: 2em;
+    top: 30px;
   }
 
   .nav-links {
