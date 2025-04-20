@@ -85,8 +85,6 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/scripts.js");
     eleventyConfig.addPassthroughCopy("./src/suncalc/suncalc.js");
     eleventyConfig.addAsyncShortcode('image', imageShortcode);
-    // Copy `img/favicon/` to `_site/`
-    eleventyConfig.addPassthroughCopy({ "./src/assets/favico.png": "/" });
     return {
       dir: {
         input: "src",
