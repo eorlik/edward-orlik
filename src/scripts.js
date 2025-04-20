@@ -9,7 +9,7 @@ function toggleMenu() {
   
   if (plusIcon.style.display === "none") {
     plusIcon.style.display = "block";
-    xIcon.style.display = "block";
+    xIcon.style.display = "none";
   } else {
     plusIcon.style.display = "none";
     xIcon.style.display = "block";
