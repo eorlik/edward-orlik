@@ -17,17 +17,11 @@ $(document).ready(function(){
     $("main").load("/"+this.id+"/index.html");
   }
 
-
 /* Once the page has loaded, hide the nav menu (only relevant to smaller screens) */
     document.getElementById("nav").classList.remove("show");
     document.getElementById("menu-btn").classList.remove("rotate")
-
 });
-
-
   });
-
-
 
   function setThemePreference() {
 
