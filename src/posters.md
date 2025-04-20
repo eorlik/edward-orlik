@@ -1,7 +1,7 @@
 ---
 title: Posters
 layout: 
-tags: nav
+tags: 
 ---
 
 <div class="gallery">
