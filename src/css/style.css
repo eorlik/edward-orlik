@@ -18,7 +18,6 @@ body {
   font-family: avenir, helvetica, arial, sans-serif;
   background: var(--bg-color);
   color: var(--color);
-  text-align: center;
 }
 
 body[data-theme='dark_theme'] {
@@ -46,7 +45,16 @@ img {
 }
 
 a {
-  color:inherit;
+  background-color: #e2e2fd;
+  border-bottom: 1px solid blue;
+  color: #323232;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: transparent;
+  color: #323232;
+  text-decoration: none;
 }
 
 main {
@@ -175,10 +183,9 @@ nav {
   main {
       position: absolute;
       top: 100px;
-      left: 250px;
+      left: 300px;
   }
 
-  
   
 }
 .gallery {
