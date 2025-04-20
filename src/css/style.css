@@ -176,7 +176,7 @@ nav {
   }
 
   .nav-link {
-    font-size: initial;
+    font-size: large;
     text-align: initial;
     width: fit-content;
     cursor: pointer;
@@ -188,7 +188,7 @@ nav {
   }
 
   .active-nav-item, .active-nav-item:hover {
-      font-size: 120%;
+      font-size: x-large;
       transform: translate(105px,20px) rotate(-33deg) ;
       transform-origin: bottom left;
       animation: ease-in-out;
