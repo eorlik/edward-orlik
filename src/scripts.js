@@ -29,7 +29,12 @@ $(document).ready(function(){
 
 /* Once the page has loaded, hide the nav menu (only relevant to smaller screens) */
     document.getElementById("nav").classList.remove("show");
-    document.getElementById("menu-btn").classList.remove("rotate")
+    
+    const plusIcon = document.getElementById("plus-icon");
+    const xIcon = document.getElementById("x-icon");
+
+    plusIcon.style.display = "block";
+    xIcon.style.display = "none";
 });
   });
 
