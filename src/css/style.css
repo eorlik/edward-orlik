@@ -22,9 +22,8 @@ body {
   color: var(--color);
 }
 
-img, h2 {
-  max-width: 95vw;
-  margin: 1em auto;
+#site-title {
+  margin: 1em 0.5em;
 }
 
 p {
@@ -40,6 +39,7 @@ p {
 
 img {
   height: auto;
+  max-width: 95vw;
 }
 
 .poster-img>img {
@@ -91,29 +91,38 @@ nav {
 }
 
 #menu-btn {
-  width:1em;
+  width: 3.5rem;
+  height: 3.5rem;
   z-index: 2;
   text-align: center;
   display: block;
   position: fixed;
   top: 0;
   right: 0.5em;
-  font-size: 3.5rem;
-  font-weight: bolder;
   transition: ease-in-out;
   animation-duration: 0.3s;
-  cursor:pointer;
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.rotate {
+#plus-icon, #x-icon {
+  width: 100%;
+  height: 100%;
+  fill: white; /* Change to white fill */
+  transition: fill 0.3s ease;
+}
+
+/* Optional hover effect */
+#menu-btn:hover svg {
+  fill: #cccccc;
+}
+
+.rotate45 {
   transform:rotate(45deg)
 }
 

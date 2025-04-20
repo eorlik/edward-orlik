@@ -3,7 +3,17 @@ toggle between hiding and showing the dropdown content */
 
 function toggleMenu() {
   document.getElementById("nav").classList.toggle("show");
-  document.getElementById("menu-btn").classList.toggle("rotate")
+  
+  const plusIcon = document.getElementById("plus-icon");
+  const xIcon = document.getElementById("x-icon");
+  
+  if (plusIcon.style.display === "none") {
+    plusIcon.style.display = "block";
+    xIcon.style.display = "none";
+  } else {
+    plusIcon.style.display = "none";
+    xIcon.style.display = "block";
+  }
 }
 
 /* When the user clicks a link in the nav bar, load the page using AJAX */

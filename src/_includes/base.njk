@@ -16,6 +16,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <div style="display:none">
+        <script>
+        fetch('assets/sprites.svg')
+      .then(response => response.text())
+      .then(text => document.body.insertAdjacentHTML('afterbegin', text));
+        </script>
+    </div>
 </head>
 <body data-theme="light_theme">
     {% include "nav-menu.njk" %}
