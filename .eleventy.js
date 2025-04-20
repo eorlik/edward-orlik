@@ -78,7 +78,6 @@ const imageShortcode = async (
 
 
 module.exports = function (eleventyConfig) {
-    eleventyConfig.addPassthroughCopy("./src/flodden.pdf");
     eleventyConfig.addPassthroughCopy("./src/css");
     eleventyConfig.addWatchTarget("./src/css/");
     eleventyConfig.addPassthroughCopy("./src/assets");
@@ -86,6 +85,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/scripts.js");
     eleventyConfig.addPassthroughCopy("./src/suncalc/suncalc.js");
     eleventyConfig.addAsyncShortcode('image', imageShortcode);
+    // Copy `img/favicon/` to `_site/`
+    eleventyConfig.addPassthroughCopy({ "assets/favico.png": "/" });
     return {
       dir: {
         input: "src",
