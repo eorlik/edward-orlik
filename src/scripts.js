@@ -44,7 +44,7 @@ $(document).ready(function(){
       history.pushState({page: urlPath}, "", urlPath);
       
       // Update the page title if needed
-      document.title = capitalizeFirstLetter(urlPath.substring(1) || "about") + " - Your Site Name";
+      document.title = capitalizeFirstLetter(urlPath.substring(1) || "about") + " - Eddie Orlik";
       
       // Hide the nav menu (only relevant to smaller screens)
       document.getElementById("nav").classList.remove("show");
