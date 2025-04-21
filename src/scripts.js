@@ -18,25 +18,67 @@ function toggleMenu() {
 
 /* When the user clicks a link in the nav bar, load the page using AJAX */
 $(document).ready(function(){
-  $(".nav-link").click(function(){
+  $(".nav-link").click(function(e){
+    // Prevent the default link behavior
+    e.preventDefault();
+    
+    // Update active nav item styling
     $(".nav-link").removeClass('active-nav-item');
     $(this).toggleClass('active-nav-item');
-    if (this.id === "") {
-        $("main").load("/about/index.html");
-    } else {
-    $("main").load("/"+this.id+"/index.html");
-  }
-
-/* Once the page has loaded, hide the nav menu (only relevant to smaller screens) */
-    document.getElementById("nav").classList.remove("show");
     
-    const plusIcon = document.getElementById("plus-icon");
-    const xIcon = document.getElementById("x-icon");
-
-    plusIcon.style.display = "block";
-    xIcon.style.display = "none";
-});
+    // Determine the path to load
+    let path;
+    let urlPath;
+    
+    if (this.id === "") {
+        path = "/about/index.html";
+        urlPath = "/about";
+    } else {
+        path = "/" + this.id + "/index.html";
+        urlPath = "/" + this.id;
+    }
+    
+    // Load the content
+    $("main").load(path, function() {
+      // After content is loaded, update the URL
+      history.pushState({page: urlPath}, "", urlPath);
+      
+      // Update the page title if needed
+      document.title = capitalizeFirstLetter(urlPath.substring(1) || "about") + " - Your Site Name";
+      
+      // Hide the nav menu (only relevant to smaller screens)
+      document.getElementById("nav").classList.remove("show");
+      
+      // Reset the menu icon
+      const plusIcon = document.getElementById("plus-icon");
+      const xIcon = document.getElementById("x-icon");
+      plusIcon.style.display = "block";
+      xIcon.style.display = "none";
+    });
   });
+  
+  // Handle browser back/forward buttons
+  window.onpopstate = function(event) {
+    if (event.state) {
+      let path = event.state.page;
+      if (path === "/about") {
+        $("main").load("/about/index.html");
+        $(".nav-link").removeClass('active-nav-item');
+        $(".nav-link[id='']").addClass('active-nav-item');
+      } else {
+        let id = path.substring(1); // Remove the leading slash
+        $("main").load("/" + id + "/index.html");
+        $(".nav-link").removeClass('active-nav-item');
+        $(".nav-link[id='" + id + "']").addClass('active-nav-item');
+      }
+    }
+  };
+});
+
+// Helper function to capitalize the first letter for the page title
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
 
   function setThemePreference() {
 
